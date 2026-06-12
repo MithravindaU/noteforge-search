@@ -3,22 +3,19 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Smart Search](https://img.shields.io/badge/Smart-Search-blueviolet?style=for-the-badge)
 ![Fuzzy Matching](https://img.shields.io/badge/Fuzzy-Matching-success?style=for-the-badge)
-![NLP Inspired](https://img.shields.io/badge/NLP-Inspired-orange?style=for-the-badge)
 
 ## 🚀 Overview
 
-FuzzyNote AI is an intelligent note retrieval system capable of finding relevant notes even when users make spelling mistakes, enter incomplete queries, or use approximate wording.
+FuzzyNote AI is a smart note retrieval system that helps users find relevant notes even when queries contain spelling mistakes, abbreviations, or incomplete keywords.
 
-Unlike traditional exact-match search systems, the project uses fuzzy matching and similarity scoring techniques to dynamically rank and retrieve the most relevant note.
-
-The system mimics miniature versions of concepts used in modern search engines, AI assistants, and recommendation systems.
+The project combines fuzzy string matching, alias-based search, and similarity scoring to improve retrieval accuracy beyond traditional exact-match search systems.
 
 ---
 
 ## 🧠 Technologies Used
 
 - Python
-- FuzzyWuzzy / RapidFuzz
+- RapidFuzz
 - Dictionaries
 - String Similarity Algorithms
 
@@ -28,12 +25,12 @@ The system mimics miniature versions of concepts used in modern search engines, 
 
 - ✅ Typo handling
 - ✅ Fuzzy matching
-- ✅ Ranked search results
 - ✅ Partial query matching
-- ✅ Token-based search
-- ✅ Contextual matching
-- ✅ Alias understanding
-- ✅ Confidence filtering
+- ✅ Alias-based search
+- ✅ Query normalization
+- ✅ Similarity score ranking
+- ✅ Threshold-based filtering
+- ✅ Keyword retrieval
 
 ---
 
@@ -43,7 +40,6 @@ The system mimics miniature versions of concepts used in modern search engines, 
 fuzzynote-ai/
 │
 ├── main.py
-├── notes_data.py
 ├── README.md
 └── screenshots/
 ```
@@ -66,15 +62,27 @@ python main.py
 
 ## ⚡ How It Works
 
-User enters search query  
-↓  
-System scans all stored notes  
-↓  
-Similarity scores are calculated dynamically  
-↓  
-Best matching note is identified  
-↓  
-Most relevant result is displayed
+User enters a search query
+
+↓
+
+System checks predefined aliases
+
+↓
+
+Stored notes are scanned
+
+↓
+
+Similarity scores are calculated using fuzzy matching
+
+↓
+
+Results are ranked
+
+↓
+
+Best matching note is returned
 
 ---
 
@@ -83,22 +91,35 @@ Most relevant result is displayed
 ### User Query
 
 ```txt
+ai
+```
+
+### Output
+
+```txt
+Direct Match: Machine Learning
+```
+
+---
+
+### User Query
+
+```txt
 machin learnng
 ```
 
-### System Comparison
+### Ranked Results
 
 | Note | Similarity |
-|---|---|
-| Sorting Algorithms | Low |
+|--------|-----------|
 | Machine Learning | High ⚡ |
 | Database Systems | Low |
+| Sorting Algorithms | Low |
 
-### Final Output
+### Output
 
 ```txt
 Best Match: Machine Learning
-Similarity Score: 96%
 ```
 
 ---
@@ -106,65 +127,62 @@ Similarity Score: 96%
 ## 🌌 Core Concepts Demonstrated
 
 | Concept | Purpose |
-|---|---|
-| Dictionaries | Store notes efficiently |
-| Loops | Compare all entries |
+|----------|----------|
+| Dictionaries | Store note collections |
+| Loops | Search through entries |
 | Fuzzy Matching | Handle spelling mistakes |
-| Similarity Scores | Rank search quality |
-| Token Search | Match partial queries |
-| Contextual Retrieval | Improve relevance |
+| Similarity Scores | Rank relevance |
+| Aliases | Support abbreviations |
+| Query Processing | Improve user experience |
 
 ---
-
 
 ## 🧩 Challenges Faced
 
 - Improving typo detection accuracy
-- Reducing false-positive matches
-- Balancing similarity thresholds
-- Optimizing search relevance
+- Selecting appropriate similarity thresholds
+- Avoiding false-positive matches
+- Ranking results effectively
 
 ---
 
-
 ## 📘 Key Learnings
 
-- Fundamentals of fuzzy matching
-- Similarity scoring techniques
-- Search ranking concepts
-- Information retrieval basics
-- Query optimization strategies
+- Fuzzy string matching techniques
+- Information retrieval fundamentals
+- Query processing concepts
+- Search ranking strategies
+- User-friendly search design
 
 ---
 
 ## 🔥 Why This Project Matters
 
-This project demonstrates foundational ideas behind:
+This project demonstrates foundational ideas used in:
 
 - Search Engines
-- AI Retrieval Systems
-- Chatbot Memory Systems
-- Recommendation Engines
-- Typo Correction Systems
-- Intelligent Query Processing
+- Information Retrieval Systems
+- Typo Correction Tools
+- Query Processing Systems
+- Intelligent Search Interfaces
 
-Although lightweight, the underlying concepts reflect real-world modern information retrieval techniques.
+While lightweight, the project introduces practical techniques that improve search usability and retrieval accuracy.
 
 ---
 
 ## 🔮 Future Improvements
 
 - PDF note searching
-- Semantic search with embeddings
+- GUI dashboard
+- Semantic search using embeddings
 - TF-IDF ranking
 - Voice-based search
-- Persistent memory storage
+- Persistent note storage
 - Vector database integration
 - Chatbot-assisted retrieval
-- GUI dashboard
 
 ---
 
 ## 👩‍💻 Author
 
-Mithravinda
+Mithravinda U
