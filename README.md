@@ -1,188 +1,133 @@
-# FuzzyNote AI 🧠📚
+# FuzzyNote AI 📚
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Smart Search](https://img.shields.io/badge/Smart-Search-blueviolet?style=for-the-badge)
-![Fuzzy Matching](https://img.shields.io/badge/Fuzzy-Matching-success?style=for-the-badge)
+**A lightweight, typo-tolerant note retrieval system built with Python and RapidFuzz.**
 
-## 🚀 Overview
+FuzzyNote AI helps users find relevant notes even when their search queries contain spelling mistakes, abbreviations, or incomplete keywords.
 
-FuzzyNote AI is a smart note retrieval system that helps users find relevant notes even when queries contain spelling mistakes, abbreviations, or incomplete keywords.
+Instead of relying only on exact text matches, the system compares queries against stored note titles, content, and aliases, then ranks matching notes by string similarity.
 
-The project combines fuzzy string matching, alias-based search, and similarity scoring to improve retrieval accuracy beyond traditional exact-match search systems.
+## ✨ Features
 
----
+- **Fuzzy search:** Handles approximate spelling and wording.
+- **Alias matching:** Supports shortcuts such as `ML` and `DBMS`.
+- **Query normalization:** Handles capitalization and extra whitespace.
+- **Ranked results:** Displays higher-scoring matches first.
+- **Threshold filtering:** Hides results below a configurable similarity score.
+- **Top-result limit:** Returns a manageable list of relevant notes.
+- **Interactive search:** Lets users perform multiple searches in one session.
 
-## 🧠 Technologies Used
+## 🛠️ Technology Stack
 
-- Python
-- RapidFuzz
-- Dictionaries
-- String Similarity Algorithms
+| Technology | Purpose |
+|---|---|
+| Python | Application logic |
+| RapidFuzz | String similarity and fuzzy matching |
+| Dictionaries | Store note titles, content, and aliases |
 
----
+## 🧠 How It Works
 
-## 📊 Features
-
-- ✅ Typo handling
-- ✅ Fuzzy matching
-- ✅ Partial query matching
-- ✅ Alias-based search
-- ✅ Query normalization
-- ✅ Similarity score ranking
-- ✅ Threshold-based filtering
-- ✅ Keyword retrieval
-
----
+1. The user enters a search query.
+2. The system normalizes the query.
+3. Exact title and alias matches are checked.
+4. The query is compared with stored note information using fuzzy string similarity.
+5. Results are filtered and sorted by score.
+6. The highest-ranked matches are displayed.
 
 ## 📂 Project Structure
 
-```txt
-fuzzynote-ai/
-│
+```text
+noteforge-search/
 ├── main.py
+├── requirements.txt
 ├── README.md
-└── screenshots/
+├── Smart_Notes_Finder.ipynb
+└── Smart_Notes_Finder_final.ipynb
 ```
 
----
+The Python script is the main application. The notebooks can be retained as development and experimentation records.
 
-## ⚙️ Installation
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Python 3.9 or newer
+- pip
+
+### Installation
+
+Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/fuzzynote-ai.git
+git clone https://github.com/MithravindaU/noteforge-search.git
+```
 
-cd fuzzynote-ai
+Enter the project directory:
 
-pip install rapidfuzz
+```bash
+cd noteforge-search
+```
 
+Install the dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the application:
+
+```bash
 python main.py
 ```
 
----
+## 💡 Example Searches
 
-## ⚡ How It Works
+| Query | Intended behaviour |
+|---|---|
+| `ml` | Finds the Machine Learning alias |
+| `machin learnng` | Attempts to match a misspelled query |
+| `database` | Finds notes related to database systems |
+| `sorting` | Finds notes related to sorting algorithms |
+| `unrelated topic` | May return no results if nothing meets the threshold |
 
-User enters a search query
+Actual results depend on the stored note content and similarity scores.
 
-↓
+## 📖 Core Concepts Demonstrated
 
-System checks predefined aliases
-
-↓
-
-Stored notes are scanned
-
-↓
-
-Similarity scores are calculated using fuzzy matching
-
-↓
-
-Results are ranked
-
-↓
-
-Best matching note is returned
-
----
-
-## 💬 Example Search
-
-### User Query
-
-```txt
-ai
-```
-
-### Output
-
-```txt
-Direct Match: Machine Learning
-```
-
----
-
-### User Query
-
-```txt
-machin learnng
-```
-
-### Ranked Results
-
-| Note | Similarity |
-|--------|-----------|
-| Machine Learning | High ⚡ |
-| Database Systems | Low |
-| Sorting Algorithms | Low |
-
-### Output
-
-```txt
-Best Match: Machine Learning
-```
-
----
-
-## 🌌 Core Concepts Demonstrated
-
-| Concept | Purpose |
-|----------|----------|
-| Dictionaries | Store note collections |
-| Loops | Search through entries |
-| Fuzzy Matching | Handle spelling mistakes |
-| Similarity Scores | Rank relevance |
-| Aliases | Support abbreviations |
-| Query Processing | Improve user experience |
-
----
-
-## 🧩 Challenges Faced
-
-- Improving typo detection accuracy
-- Selecting appropriate similarity thresholds
-- Avoiding false-positive matches
-- Ranking results effectively
-
----
-
-## 📘 Key Learnings
-
-- Fuzzy string matching techniques
+- Fuzzy string matching
 - Information retrieval fundamentals
-- Query processing concepts
-- Search ranking strategies
-- User-friendly search design
+- Query normalization
+- Alias-based lookup
+- Similarity scoring and ranking
+- Threshold-based filtering
+- Basic Python data structures
 
----
+## ⚠️ Current Limitations
 
-## 🔥 Why This Project Matters
-
-This project demonstrates foundational ideas used in:
-
-- Search Engines
-- Information Retrieval Systems
-- Typo Correction Tools
-- Query Processing Systems
-- Intelligent Search Interfaces
-
-While lightweight, the project introduces practical techniques that improve search usability and retrieval accuracy.
-
----
+- Notes are stored in the source code rather than a persistent database.
+- The application uses predefined sample notes.
+- Fuzzy similarity does not understand meaning in the same way a semantic embedding model can.
+- Similarity scores are not calibrated confidence probabilities.
+- Search quality depends on the note content, aliases, and selected threshold.
 
 ## 🔮 Future Improvements
 
-- PDF note searching
-- GUI dashboard
-- Semantic search using embeddings
-- TF-IDF ranking
-- Voice-based search
-- Persistent note storage
-- Vector database integration
-- Chatbot-assisted retrieval
+- Import notes from text and PDF files.
+- Add persistent storage so users can create and edit notes.
+- Build a simple web interface.
+- Add automated tests for typos, aliases, empty queries, and unrelated searches.
+- Compare fuzzy matching with TF-IDF and semantic search.
+- Evaluate retrieval quality using a small, documented test dataset.
 
----
+## 🎯 Project Goal
+
+FuzzyNote AI explores how lightweight retrieval techniques can make searching stored information more forgiving and user-friendly. It serves as a foundation for learning about search engines, query processing, and information retrieval.
 
 ## 👩‍💻 Author
 
-Mithravinda U
+**Mithravinda U**
+
+GitHub: [@MithravindaU](https://github.com/MithravindaU)
+
+---
+
+*Built as a learning project exploring Python and intelligent search techniques.*
